@@ -13,4 +13,4 @@ import sorting
 import bubbleSort
 
 datos = sorting.genData()
-bubbleSort.optBubble(datos)
+bubbleSort.bubble(datos)
