@@ -1,6 +1,6 @@
 import sorting
 
-def bubbleSort(data):
+def bubbleSort(data, plot=True):
     """ Bubble Sort algorithm. """
     
     plotting = sorting.Plotter(data)

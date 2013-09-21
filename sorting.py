@@ -24,7 +24,7 @@ def testAlgorithm(algorithm, number=100, length=100, maximum=100):
     """ Tests an algorithm with a number of random inputs. """
     for i in range(number):
         original_data = genData(length,maximum)
-        sorted_data = algorithm(original_data)
+        sorted_data = algorithm(original_data, False)
         if not isSorted(sorted_data):
             print "Error! A counterexample was found!"
             print sorted_data
@@ -38,20 +38,23 @@ def testAlgorithm(algorithm, number=100, length=100, maximum=100):
 class Plotter:
     """ Data visualizer. """
 
-    def __init__(self, data, folder="./", step=0):
+    def __init__(self, data, plot=True, folder="./", step=0):
         self.folder = folder
         self.step = step
         self.data = data
+        self.plot = plot
 
     def snapshot(self):
         """ Plots the current data. """
-        pylab.plot(range(len(self.data)),self.data,'k.',markersize=6)
-        pylab.savefig(self.folder + "plot" + '%04d' % self.step + ".png")
-        pylab.clf()
-        self.step = self.step+1
+        if self.plot:
+            pylab.plot(range(len(self.data)),self.data,'k.',markersize=6)
+            pylab.savefig(self.folder + "plot" + '%04d' % self.step + ".png")
+            pylab.clf()
+            self.step = self.step+1
 
     def end(self):
         """ Creates the video. """
-        os.system("cd " + self.folder)
-        os.system("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4")
-        os.system("rm plot????.png")
+        if self.plot:
+            os.system("cd " + self.folder)
+            os.system("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4")
+            os.system("rm plot????.png")
