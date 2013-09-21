@@ -8,7 +8,7 @@
 ##
 
 # make.py
-# This file contains an example of usage.
+# This file contains an example of use.
 # It will create an animation of BubbleSort.
 
 import sorting
