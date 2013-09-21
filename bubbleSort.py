@@ -2,6 +2,8 @@
 
 import sorting
 
+
+
 def bubbleSort(data, plot=True):
     """ Bubble Sort algorithm. """
     
@@ -22,4 +24,20 @@ def bubbleSort(data, plot=True):
 
         plotting.snapshot()
     plotting.end()
+    return data
+
+
+
+def optBubble(data, plot=True):
+    """ Optimized Bubble Sort algorithm. """
+    
+    n = len(data)-1
+    while n != 0:
+        limit = 0
+        for i in range(n):
+            if data[i] > data[i+1]:
+                data[i],data[i+1] = data[i+1],data[i]
+                limit = i
+        n = limit
+
     return data
