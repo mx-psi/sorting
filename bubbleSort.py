@@ -6,7 +6,6 @@ import sorting
 
 def bubbleSort(data, plot=True):
     """ Bubble Sort algorithm. """
-    
     plotting = sorting.Plotter(data, plot)
     plotting.snapshot()
 
@@ -24,13 +23,16 @@ def bubbleSort(data, plot=True):
 
         plotting.snapshot()
     plotting.end()
+
     return data
 
 
 
 def optBubble(data, plot=True):
     """ Optimized Bubble Sort algorithm. """
-    
+    plotting = sorting.Plotter(data, plot)
+    plotting.snapshot()
+
     n = len(data)-1
     while n != 0:
         limit = 0
@@ -39,5 +41,8 @@ def optBubble(data, plot=True):
                 data[i],data[i+1] = data[i+1],data[i]
                 limit = i
         n = limit
+        
+        plotting.snapshot()
+    plotting.end()
 
     return data
