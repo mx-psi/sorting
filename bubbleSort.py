@@ -3,7 +3,7 @@ import sorting
 def bubbleSort(data, plot=True):
     """ Bubble Sort algorithm. """
     
-    plotting = sorting.Plotter(data)
+    plotting = sorting.Plotter(data, plot)
     plotting.snapshot()
 
     is_sorted = False
