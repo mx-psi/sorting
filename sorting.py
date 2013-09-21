@@ -16,8 +16,8 @@ def isSorted(data):
 def genData(length=100, maximum=100):
     """ Generates random data given length and maximum. """
     from random import randint
-    data = [randint(0,maximum) for i in range(length)]
-    return data
+    return [randint(0,maximum) for i in range(length)]
+    
 
 
 
@@ -48,6 +48,7 @@ class Plotter:
     def snapshot(self):
         """ Plots the current data. """
         if self.plot:
+            # Saves the current state into plot[step].png.
             pylab.plot(range(len(self.data)),self.data,'k.',markersize=6)
             pylab.savefig(self.folder + "plot" + '%04d' % self.step + ".png")
             pylab.clf()
@@ -56,6 +57,8 @@ class Plotter:
     def end(self):
         """ Creates the video. """
         if self.plot:
+            # Shell commands. Assuming that avconv is installed.
+            # WARNING: It will delete all plot???.png files in the folder.
             os.system("cd " + self.folder)
             os.system("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4")
             os.system("rm plot????.png")

@@ -7,14 +7,15 @@ def bubble(data, plot=True):
     plotting = sorting.Plotter(data, plot)
     plotting.snapshot()
 
+    # Elements after last swap are already ordered.
     n = len(data)-1
     while n != 0:
-        limit = 0
+        last_swap = 0
         for i in range(n):
             if data[i] > data[i+1]:
                 data[i],data[i+1] = data[i+1],data[i]
-                limit = i
-        n = limit
+                last_swap = i
+        n = last_swap
         
         plotting.snapshot()
     plotting.end()
