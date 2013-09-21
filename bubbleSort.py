@@ -1,3 +1,5 @@
+# bubbleSort.py
+
 import sorting
 
 def bubbleSort(data, plot=True):
@@ -7,16 +9,16 @@ def bubbleSort(data, plot=True):
     plotting.snapshot()
 
     is_sorted = False
-    i = 0
+    n = len(data)-1
 
     while not is_sorted:
         is_sorted = True
 
-        for j in range(len(data)-1-i):
+        for j in range(n):
             if data[j] > data[j+1]:
                 data[j],data[j+1] = data[j+1],data[j]
                 is_sorted = False
-        i = i+1
+        n = n-1
 
         plotting.snapshot()
     plotting.end()

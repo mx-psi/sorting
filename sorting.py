@@ -1,10 +1,11 @@
-# General sorting functions
+# sorting.py
+# This file contains testing and auxiliary functions.
+
 import pylab
 import os
 
 
-
-# Auxiliar Functions
+# Testing Functions
 
 def isSorted(data):
     """ Returns true if the data is sorted in increasing order. """
