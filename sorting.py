@@ -18,7 +18,12 @@ def genData(length=100, maximum=100):
     from random import randint
     return [randint(0,maximum) for i in range(length)]
     
-
+def genPermutation(lenght=100):
+    """ Generates a random permutation. """
+    from random import shuffle
+    x = range(lenght)
+    shuffle(x)
+    return x
 
 
 def testAlgorithm(algorithm, number=100, length=100, maximum=100):
