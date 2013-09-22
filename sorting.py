@@ -3,7 +3,7 @@
 
 import pylab
 import os
-
+import sys
 
 # Testing Functions
 
@@ -66,4 +66,5 @@ class Plotter:
             # WARNING: It will delete all plot???.png files in the folder.
             os.system("cd " + self.folder)
             os.system("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4")
-            os.system("rm plot????.png")
+            if sys.platform == "win32": os.system("DEL plot????.png")
+            elif sys.platform.startswith("linux"): os.system("rm plot????.png")
