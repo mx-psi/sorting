@@ -3,7 +3,6 @@
 
 import pylab
 import os
-import sys
 
 # Testing Functions
 
