@@ -55,9 +55,9 @@ class Plotter:
         if self.plot:
             # Saves the current state into plot[step].png.
             pylab.plot(range(len(self.data)),self.data,'k.',markersize=6)
-            pylab.savefig(self.folder + "plot" + '%04d' % self.step + ".png")
+            pylab.savefig("{}plot{:04d}.png".format(self.folder,self.step))
             pylab.clf()
-            self.step = self.step+1
+            self.step += 1
 
     def end(self):
         """ Creates the video. """
