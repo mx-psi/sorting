@@ -13,6 +13,7 @@
 
 import sorting
 import bubbleSort
+import selectionSort
 
 datos = sorting.genPermutation()
-bubbleSort.bubble(datos)
+selectionSort.selection(datos)
