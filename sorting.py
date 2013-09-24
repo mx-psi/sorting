@@ -13,12 +13,12 @@ def isSorted(data):
 
 
 
-def genData(length=100, maximum=100):
+def genData(length=80, maximum=80):
     """ Generates random data given length and maximum. """
     from random import randint
     return [randint(0,maximum) for i in range(length)]
     
-def genPermutation(lenght=100):
+def genPermutation(lenght=80):
     """ Generates a random permutation. """
     from random import shuffle
     x = range(lenght)

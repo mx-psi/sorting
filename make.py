@@ -14,5 +14,5 @@
 import sorting
 import bubbleSort
 
-datos = sorting.genData()
+datos = sorting.genPermutation()
 bubbleSort.bubble(datos)
