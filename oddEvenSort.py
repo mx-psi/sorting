@@ -1,5 +1,11 @@
 # oddEvenSort.py
 
+##
+# The snapshots are made outside the loops for making videos shorter. 
+#
+# If you want a step-by-step video, place them inside the for loops
+##
+
 import sorting
 
 def oddEven(data, plot = True):
