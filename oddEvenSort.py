@@ -18,7 +18,7 @@ def oddEven(data, plot = True):
                 is_sorted = False
         plotting.snapshot()
         for i in range(1, n, 2):
-            #Then compares each couple [odd,even]
+            #Compares each couple [odd,even]
             if data[i] > data[i+1]:
                 #Swaps and sets is_sorted to False
                 data[i],data[i+1] = data[i+1],data[i]
