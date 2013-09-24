@@ -3,6 +3,7 @@
 
 import pylab
 import os
+import subprocess
 
 # Testing Functions
 
@@ -62,9 +63,9 @@ class Plotter:
         """ Creates the video. """
         if self.plot:
             # Shell commands. Assuming that avconv is installed.
-            # WARNING: It will delete all plot???.png files in the folder.
-            os.system("cd " + self.folder)
-            #os.system("ffmpeg -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4")
-            os.system("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4")
+            # WARNING: It will delete all plot???.png files in the folder. 
+            subprocess.call("cd {0}".format(self.folder), shell=True)
+            subprocess.call("ffmpeg -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4", shell=True)
+            #subprocess.call("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4", shell=True)
             for f in os.listdir("."): 
                 if f.startswith("plot") and f.endswith(".png"): os.remove(f)
