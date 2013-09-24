@@ -14,6 +14,7 @@
 import sorting
 import bubbleSort
 import selectionSort
+import oddEvenSort
 
 datos = sorting.genPermutation()
-selectionSort.selection(datos)
+oddEvenSort.oddEven(datos)

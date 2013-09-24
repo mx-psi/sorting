@@ -35,6 +35,7 @@ def testAlgorithm(algorithm, number=100, length=100, maximum=100):
             print "Error! A counterexample was found!"
             print sorted_data
             return False
+    print "The algorithm passed all tests"
     return True
 
 
