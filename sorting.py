@@ -51,7 +51,6 @@ def testAlgorithm(number=100):
             print "Error! A counterexample was found!"
             print self.data
             return False
-        print "The algorithm passed all tests"
     return True
 
 def plotAlgorithm():
