@@ -8,6 +8,7 @@ def selection():
 
     n = len(data)
     for i in range(n-1):
+        sorting.iteration()
         # Finds the minimum value
         minimum = data[i]
         min_pos = i
@@ -16,7 +17,6 @@ def selection():
                 minimum = data[j]
                 min_pos = j
         sorting.swap(min_pos,i)
-        sorting.iteration()
     sorting.end()
     
     return data
