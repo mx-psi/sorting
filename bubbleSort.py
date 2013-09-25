@@ -2,9 +2,10 @@
 
 import sorting
 
-def bubble(data, plot=True):
+def bubble():
     """ Bubble Sort algorithm. """
-    plotting = sorting.Plotter(data, plot)
+    data = sorting.data
+    plotting = sorter.Plotter(sorter)
     plotting.snapshot()
 
     # Elements after last swap are already sorted.
@@ -18,7 +19,7 @@ def bubble(data, plot=True):
         n = last_swap
         
         plotting.snapshot()
-    plotting.end()
+    plotting.createMovie()
 
     return data
 
