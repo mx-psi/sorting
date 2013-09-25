@@ -1,7 +1,7 @@
 # plotting.py
 # This file contains plotting functions.
 
-import pylab
+import matplotlib.pyplot as pyplot
 import os
 import subprocess
 import sorting
@@ -20,9 +20,10 @@ def snapshot():
     global step
 
     # Saves the current state into plot[step].png.
-    pylab.plot(range(len(sorting.data)), sorting.data, 'k.', markersize=6)
-    pylab.savefig("{}plot{:04d}.png".format(folder,step))
-    pylab.clf()
+    pyplot.clf()
+    pyplot.axis("off")
+    pyplot.plot(range(len(sorting.data)), sorting.data, 'k.', markersize=6)
+    pyplot.savefig("{}plot{:04d}.png".format(folder,step))
     step += 1
 
 def createMovie():
