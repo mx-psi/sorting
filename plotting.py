@@ -6,9 +6,12 @@ import os
 import subprocess
 
 
+
 # General variables
 folder = "./"
 step = 0
+
+
 
 # Plotting functions
 def snapshot():
@@ -27,6 +30,7 @@ def createMovie():
     #subprocess.call("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4", shell=True)
 
 def restart():
+    """ Restarts the plotting system. """
     # WARNING: It will delete all plot???.png files in the folder.
     step = 0
     for f in os.listdir("."): 
