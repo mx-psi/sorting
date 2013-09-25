@@ -2,7 +2,7 @@
 
 import sorting
 
-def selection(data, plot=True):
+def selection():
     """ Selection sort """
     data = sorting.start()
 
