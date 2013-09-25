@@ -9,7 +9,7 @@ def oddEven():
     is_sorted = False
     a = 0
     while not is_sorted:
-        
+        sorting.iteration()
         is_sorted = True
         
         for i in range(a, n, 2):
@@ -18,7 +18,6 @@ def oddEven():
                 is_sorted = False
                 
         a = not a 
-        sorting.iteration()
         
     sorting.end()
     return data
