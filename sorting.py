@@ -35,10 +35,11 @@ def genPermutation():
 
 
 
-# Testing functions
+# Testing and plotting functions
 
 def testAlgorithm(number=100):
     """ Tests an algorithm with a number of random inputs. """
+    plot = False
     for i in range(number):
         data = genData()
         data = algorithm()
@@ -47,10 +48,13 @@ def testAlgorithm(number=100):
             print self.data
             return False
         print "The algorithm passed all tests"
-        return True
+    return True
 
 def plotAlgorithm():
-    pass
+    plot = True
+    data = genPermutation()
+    data = algorithm()
+    
 
 
 
@@ -66,7 +70,7 @@ def swap(i,j):
     data[i],data[j] = data[j],data[i]
 
 def iteration():
-    """ It is called when the external loop finishes the current iteration. """
+    """ It is called when the most external loop finishes the current iteration. """
     if plot: plotting.snapshot()
 
 def end():

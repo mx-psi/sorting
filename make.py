@@ -18,4 +18,5 @@ import oddEvenSort
 
 sorting.algorithm = bubbleSort.bubble
 sorting.testAlgorithm()
+sorting.plotAlgorithm()
 

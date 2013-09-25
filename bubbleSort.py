@@ -13,7 +13,7 @@ def bubble():
         last_swap = 0
         for i in range(n):
             if data[i] > data[i+1]:
-                data[i],data[i+1] = data[i+1],data[i]
+                sorting.swap(i,i+1)
                 last_swap = i
         n = last_swap
         
