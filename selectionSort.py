@@ -4,8 +4,7 @@ import sorting
 
 def selection(data, plot=True):
     """ Selection sort """
-    plotting = sorting.Plotter(data, plot)
-    plotting.snapshot()
+    data = sorting.start()
 
     n = len(data)
     for i in range(n-1):
@@ -15,10 +14,9 @@ def selection(data, plot=True):
         for j in range(i+1,n):
             if data[j]<minimum:
                 minimum = data[j]
-                min_pos = j        
-        # Swaps values
-        data[min_pos],data[i] = data[i],minimum
-
-        plotting.snapshot()
-    plotting.end()
+                min_pos = j
+        sorting.swap(min_pos,i)
+        sorting.iteration()
+    sorting.end()
+    
     return data
