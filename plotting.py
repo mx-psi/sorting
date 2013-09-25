@@ -29,7 +29,7 @@ def snapshot():
 def createMovie():
     """ Creates the video using the snapshots. """
     # Shell commands. Assuming that avconv is installed.
-    subprocess.call("cd {0}".format(folder), shell=True)
+    subprocess.call("cd {}".format(folder), shell=True)
     subprocess.call("ffmpeg -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4", shell=True)
     #subprocess.call("avconv -qscale 5 -r 20 -b 9600 -i plot%04d.png movie.mp4", shell=True)
 
