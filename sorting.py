@@ -72,6 +72,7 @@ def start():
 def swap(i,j):
     """ Swaps the contents of data[i] and data[j]. """
     data[i],data[j] = data[j],data[i]
+    if plot_swaps: plotting.swaps(i,j)
 
 def iteration():
     """ It is called when the most external loop finishes the current iteration. """
