@@ -2,7 +2,7 @@
 
 import sorting
 
-def oddEven(data, plot = True):
+def oddEven():
     """ Odd-even sort. """
     data = sorting.start()
     n = len(data) -1

@@ -16,7 +16,7 @@ import bubbleSort
 import selectionSort
 import oddEvenSort
 
-sorting.algorithm = bubbleSort.bubble
+sorting.algorithm = oddEvenSort.oddEven
 sorting.testAlgorithm()
 sorting.plotAlgorithm()
 
