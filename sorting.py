@@ -11,7 +11,7 @@ data_length = 80
 data_maximum = 80
 algorithm = None
 plot = False
-
+plot_swaps = False
 
 
 # Auxiliary functions
@@ -54,8 +54,10 @@ def testAlgorithm(number=100):
 def plotAlgorithm():
     global plot
     global data
-
+    global plot_swaps
+    
     plot = True
+    plot_swaps = True
     data = genPermutation()
     data = algorithm()
     
