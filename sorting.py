@@ -4,6 +4,7 @@
 import pylab
 import os
 import subprocess
+import plotting
 
 
 # General variables
@@ -39,6 +40,9 @@ def genPermutation():
 
 def testAlgorithm(number=100):
     """ Tests an algorithm with a number of random inputs. """
+    global plot
+    global data
+
     plot = False
     for i in range(number):
         data = genData()
@@ -51,6 +55,9 @@ def testAlgorithm(number=100):
     return True
 
 def plotAlgorithm():
+    global plot
+    global data
+
     plot = True
     data = genPermutation()
     data = algorithm()

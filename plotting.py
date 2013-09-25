@@ -4,6 +4,7 @@
 import pylab
 import os
 import subprocess
+import sorting
 
 
 
@@ -16,6 +17,8 @@ step = 0
 # Plotting functions
 def snapshot():
     """ Plots the current data. """
+    global step
+
     # Saves the current state into plot[step].png.
     pylab.plot(range(len(sorting.data)), sorting.data, 'k.', markersize=6)
     pylab.savefig("{}plot{:04d}.png".format(folder,step))
@@ -32,9 +35,9 @@ def createMovie():
 def restart():
     """ Restarts the plotting system. """
     # WARNING: It will delete all plot???.png files in the folder.
+    global step
+
     step = 0
     for f in os.listdir("."): 
         if f.startswith("plot") and f.endswith(".png"):
             os.remove(f)
-
-    
