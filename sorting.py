@@ -1,9 +1,7 @@
 # sorting.py
 # This file contains testing and auxiliary functions.
 
-import pylab
-import os
-import subprocess
+
 import plotting
 
 
