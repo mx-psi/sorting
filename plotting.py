@@ -18,13 +18,18 @@ step = 0
 def snapshot():
     """ Plots the current data. """
     global step
-
-    # Saves the current state into plot[step].png.
+    # Saves the previous state into plot[step].png.
+    pyplot.savefig("{}plot{:04d}.png".format(folder,step))
+    step += 1
+    # Puts current state into the Axes object
     pyplot.clf()
     pyplot.axis("off")
     pyplot.plot(range(len(sorting.data)), sorting.data, 'k.', markersize=6)
-    pyplot.savefig("{}plot{:04d}.png".format(folder,step))
-    step += 1
+
+def swaps(i,j):
+    """Adds swaps to the current Axes object."""
+    pyplot.plot(i, sorting.data[i], "r.", markersize=6)
+    pyplot.plot(j, sorting.data[j], "r.", markersize=6)
 
 def createMovie():
     """ Creates the video using the snapshots. """
