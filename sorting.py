@@ -83,5 +83,6 @@ def iteration():
 def end():
     """ It is called when the sorting process finishes. """
     if plot:
+        plotting.snapshot()
         plotting.createMovie()
         plotting.restart()
