@@ -68,7 +68,6 @@ def plotAlgorithm():
 
 def start():
     """ Starts the sorting process and returns the original data. """
-    if plot: plotting.snapshot()
     return data
 
 def swap(i,j):
