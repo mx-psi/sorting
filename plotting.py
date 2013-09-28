@@ -28,8 +28,8 @@ def snapshot():
 
 def swaps(i,j):
     """Adds swaps to the current Axes object."""
-    pyplot.plot(i, sorting.data[i], "r.", markersize=6)
-    pyplot.plot(j, sorting.data[j], "r.", markersize=6)
+    pyplot.plot(j, sorting.data[i], "r.", markersize=6)
+    pyplot.plot(i, sorting.data[j], "r.", markersize=6)
 
 def createMovie():
     """ Creates the video using the snapshots. """
