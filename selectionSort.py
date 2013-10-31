@@ -1,5 +1,16 @@
 # selectionSort.py
 
+'''
+Algorithmic efficiency:
+Time:
+  Average case: O(n**2)
+  Worst case:   O(n**2)
+  Best case:    O(n**2)
+Auxiliary Space:
+  Worst case:   O(1)
+'''
+
+
 import sorting
 
 def selection():
