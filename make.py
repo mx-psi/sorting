@@ -16,8 +16,9 @@ import bubbleSort
 import selectionSort
 import oddEvenSort
 import insertionSort
+import heapSort
 
-sorting.algorithm = insertionSort.insertion
+sorting.algorithm = heapSort.heapsort
 sorting.testAlgorithm()
 sorting.plotAlgorithm()
 
