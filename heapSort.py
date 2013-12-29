@@ -1,7 +1,16 @@
 # heapSort.py
 
-import sorting
+'''
+Algorithmic efficiency:
+Time:
+  Average case: O(n*log(n))
+  Worst case:   O(n*log(n))
+  Best case:    O(n*log(n))
+Auxiliary Space:
+  Worst case:   O(1)
+'''
 
+import sorting
 
 def heapsort():
     """ Heap Sort. """

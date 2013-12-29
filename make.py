@@ -12,10 +12,6 @@
 # It will create an animation of the algorithm in sorting.algorithm.
 
 import sorting
-import bubbleSort
-import selectionSort
-import oddEvenSort
-import insertionSort
 import heapSort
 
 sorting.algorithm = heapSort.heapsort
