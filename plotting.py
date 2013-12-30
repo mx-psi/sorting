@@ -24,12 +24,20 @@ def snapshot():
     # Puts current state into the Axes object
     pyplot.clf()
     pyplot.axis("off")
-    pyplot.plot(range(len(sorting.data)), sorting.data, 'k.', markersize=6)
+    # Checks the plotting mode
+    if bars:
+        pyplot.bar(range(len(sorting.data)), sorting.data,color ='#2a2a2a', linewidth = 0, align='center')
+    else:
+        pyplot.plot(range(len(sorting.data)), sorting.data, 'k.', markersize=6)
 
 def swaps(i,j):
     """Adds swaps to the current Axes object."""
-    pyplot.plot(j, sorting.data[i], "r.", markersize=6)
-    pyplot.plot(i, sorting.data[j], "r.", markersize=6)
+    if bars:
+        pyplot.bar(j,sorting.data[i],color ='#fe2e2e', linewidth = 0, align='center')
+        pyplot.bar(i,sorting.data[j],color ='#fe2e2e', linewidth = 0, align='center')
+    else:
+        pyplot.plot(j, sorting.data[i], "r.", markersize=6)
+        pyplot.plot(i, sorting.data[j], "r.", markersize=6)
 
 def createMovie():
     """ Creates the video using the snapshots. """

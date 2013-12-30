@@ -7,18 +7,14 @@ import plotting
 
 # General variables
 data = []
-data_length = 80 
 data_maximum = 80
-algorithm = None
-plot = False
-plot_swaps = False
 
 
 # Auxiliary functions
 
 def isSorted():
     """ Returns true if the data is sorted in increasing order. """
-    return all( data[i] <= data[i+1] for i in range(len(data)-1) )
+    return all(data[i] <= data[i+1] for i in range(len(data)-1))
 
 def genData():
     """ Generates random data. """
@@ -38,10 +34,10 @@ def genPermutation():
 
 def testAlgorithm(number=100):
     """ Tests an algorithm with a number of random inputs. """
-    global plot
     global data
-
-    plot = False
+    global test
+    
+    test = True
     for i in range(number):
         data = genData()
         data = algorithm()
@@ -52,12 +48,10 @@ def testAlgorithm(number=100):
     return True
 
 def plotAlgorithm():
-    global plot
     global data
-    global plot_swaps
+    global test
     
-    plot = True
-    plot_swaps = True
+    test = False
     data = genPermutation()
     data = algorithm()
     
@@ -73,15 +67,15 @@ def start():
 def swap(i,j):
     """ Swaps the contents of data[i] and data[j]. """
     data[i],data[j] = data[j],data[i]
-    if plot_swaps: plotting.swaps(i,j)
+    if plot_swaps and not test: plotting.swaps(i,j)
 
 def iteration():
     """ It is called when the most external loop finishes the current iteration. """
-    if plot: plotting.snapshot()
+    if not test: plotting.snapshot()
 
 def end():
     """ It is called when the sorting process finishes. """
-    if plot:
+    if not test:
         plotting.snapshot()
         plotting.createMovie()
         plotting.restart()
