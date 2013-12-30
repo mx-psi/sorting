@@ -1,5 +1,14 @@
-#plot.py
-#This file manages the plotting of the algorithm. 'plot.py -h' for usage.
+##
+# Sorting algorithms visualized.
+#
+# This code uses python2, matplotlib and avconv. You may need to install them.
+#
+# The idea was taken from "The Glowing Python":
+#    http://glowingpython.blogspot.com.es/2013/02/selection-sort-animated.html
+##
+
+# plot.py
+# This file manages the plotting of the algorithm. 'plot.py -h' for usage.
 
 from optparse import OptionParser
 import sorting
