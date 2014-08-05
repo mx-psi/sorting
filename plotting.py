@@ -7,11 +7,10 @@ import subprocess
 import sorting
 
 
-
 # General variables
+# 'rate' and 'bars' are defined through plot.py
 folder = "./"
 step = 0
-
 
 
 # Plotting functions
@@ -43,7 +42,7 @@ def createMovie():
     """ Creates the video using the snapshots. """
     # Shell commands. Assuming that avconv is installed.
     subprocess.call("cd {}".format(folder), shell=True)
-    subprocess.call("avconv -r 20 -i plot%04d.png movie.mp4", shell=True)
+    subprocess.call("avconv -r {} -i plot%04d.png movie.mp4".format(rate), shell=True)
 
 def restart():
     """ Restarts the plotting system. """
