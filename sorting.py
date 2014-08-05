@@ -1,25 +1,24 @@
 # sorting.py
 # This file contains testing and auxiliary functions.
 
-
 import plotting
 
 
 # General variables
+# 'plot_swaps', 'data_length' and 'algorithm' are defined through plot.py
 data = []
-data_maximum = 80
 
 
 # Auxiliary functions
 
 def isSorted():
     """ Returns true if the data is sorted in increasing order. """
-    return all(data[i] <= data[i+1] for i in range(len(data)-1))
+    return all(data[i] <= data[i+1] for i in xrange(len(data)-1))
 
 def genData():
     """ Generates random data. """
     from random import randint
-    return [randint(0,data_maximum) for i in range(data_length)]
+    return [randint(1,80) for i in xrange(data_length)]
 
 def genPermutation():
     """ Generates a random permutation. """
@@ -32,13 +31,13 @@ def genPermutation():
 
 # Testing and plotting functions
 
-def testAlgorithm(number=100):
+def testAlgorithm(n=100):
     """ Tests an algorithm with a number of random inputs. """
     global data
     global test
     
     test = True
-    for i in range(number):
+    for __ in xrange(n):
         data = genData()
         data = algorithm()
         if not isSorted():
@@ -48,6 +47,7 @@ def testAlgorithm(number=100):
     return True
 
 def plotAlgorithm():
+    """Plots the algorithm."""
     global data
     global test
     
