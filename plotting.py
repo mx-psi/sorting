@@ -40,9 +40,13 @@ def swaps(i,j):
 
 def createMovie():
     """ Creates the video using the snapshots. """
-    # Shell commands. Assuming that avconv is installed.
+    # Shell commands. Assuming that either avconv or ffmpeg are installed.
     subprocess.call("cd {}".format(folder), shell=True)
-    subprocess.call("avconv -r {} -i plot%04d.png movie.mp4".format(rate), shell=True)
+    parameters = "-r {} -i plot%04d.png movie.mp4".format(rate)
+    exit_code = subprocess.call("avconv {}".format(parameters), shell=True)
+    # If avconv is not a command, try ffmpeg instead
+    if exit_code == 127:
+        subprocess.call("ffmpeg {}".format(parameters), shell=True)
 
 def restart():
     """ Restarts the plotting system. """
@@ -50,6 +54,6 @@ def restart():
     global step
 
     step = 0
-    for f in os.listdir("."): 
+    for f in os.listdir("."):
         if f.startswith("plot") and f.endswith(".png"):
             os.remove(f)
