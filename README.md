@@ -3,9 +3,9 @@ Sorting
 
 Sorting is a plotter of sorting algorithms. It creates a video representing the changes an algorithm makes to a set of data. It uses [*python2*][1], [*matplotlib*][2] and [*avconv*][3] or [ffmpeg][4]. The original concept was taken from [The Glowing Python][5].
 
-###Usage
+### Usage
 
-####Algorithm
+#### Algorithm
 The sorting algorithm should be provided as a function inside a Python module, adding the functions provided in `sorting.py`.
 
 The functions that should be included in the algorithm for its plotting are:
@@ -15,7 +15,7 @@ The functions that should be included in the algorithm for its plotting are:
  - `sorting.iteration()`: Plots current iteration.
  - `sorting.end()`: Finishes plotting and starts doing the video.
 
-####Calling the program
+#### Calling the program
 Sorting uses Python's [`optparser`][6] module for parsing options. It includes various options such as plotting swaps, two different ways of plotting the algorithm and adjustment of data size and frame rate. You may call  `plot.py -h` for usage and information about options.
 
 
